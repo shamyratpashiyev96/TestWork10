@@ -24,7 +24,6 @@ function storefront_child_register_custom_post_types(): void
         'has_archive' => true,
         'rewrite' => ['slug' => 'cities'],
         'supports' => ['title'],
-        // 'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'comments'],
         'menu_icon' => 'dashicons-building',
         'show_in_rest' => true
     ]);
