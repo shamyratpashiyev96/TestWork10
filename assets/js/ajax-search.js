@@ -1,5 +1,3 @@
-// import $ from './jquery-3.7.1.min';
-
 jQuery(function($) {
     $('#ajax-search').on('input', function() {
         let keyword = $(this).val();

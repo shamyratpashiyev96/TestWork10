@@ -8,28 +8,12 @@ class CityWithWeatherWidget extends WP_Widget
             'City With Weather Widget',
             [
                 'description' => 'Shows the temperature of a city selected',
-                'classname'                      => 'widget-class-name',  // CSS class added to widget's container
-                'description'                    => 'Widget description',  // Shown in the widgets admin panel
-
-                // Customizer options
-                'customize_selective_refresh'    => true,  // Enables partial refresh in the Customizer
-
-                // Widget control options
-                'width'                          => 400,  // Width of the widget control form (pixels)
-                'height'                         => 350,  // Height of the widget control form (pixels)
-
-                // Block Editor related options
-                'show_instance_in_rest'          => false,  // Make widget available in REST API
-
-                // Accessibility options
-                'has_accessibility_label'        => true,  // Whether it has explicit accessibility label
-                'accessibility_description'      => 'Custom accessibility description',  // Screen reader description
             ],
         );
     }
 
     // Showing the widget in the frontend
-    public function widget($args, $instance)
+    public function widget($args, $instance): void
     {
         echo $args['before_widget'];
 
@@ -58,7 +42,7 @@ class CityWithWeatherWidget extends WP_Widget
         echo $args['after_widget'];
     }
 
-    public function form($instance)
+    public function form($instance): void
     {
         $city_id = !empty($instance['city_id']) ? $instance['city_id'] : 0;
 
@@ -88,7 +72,7 @@ class CityWithWeatherWidget extends WP_Widget
 <?php
     }
 
-    public function update($new_instance, $old_instance)
+    public function update($new_instance, $old_instance): array
     {
         $instance = [];
         $instance['city_id'] = !empty($new_instance['city_id']) ? intval($new_instance['city_id']) : 0;
